@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication of 3 numbers</title>
+    <style>
+        body{
+            display: flex;
+            height: 80vh;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+        div{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        input{
+            height: 8vh;
+            width: 18vw;
+            margin-bottom: 8px;
+            margin-left: 75px;
+            border: 5px solid rebeccapurple;
+        }
+        button{
+            font-size: medium;
+            font-weight: bold;
+            padding: 1em;
+            border: 1px solid gray;
+            border-radius: 5px;
+            cursor: pointer;
+            color: rgb(41, 219, 41);
+            background-color:rgb(97, 29, 185);
+        }
+        #output{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            color: rgb(57, 11, 165);
+            display: none;
+            margin-top: 40px;
+            margin-left: 150px;
+        }
+        #container{
+            margin-top: 75px;
+            background-color:rgb(229, 245, 13);
+            width: 30vw;
+            height: 80vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div>
+    <input type="number" id="x" placeholder="enter any number">
+    <input type="number" id="y" placeholder="enter any number">
+    <input type="number" id="z"placeholder="enter any number">
+    <button>Multiply 3 numbers</button>
+</div>
+<div id="output"></div>
+</div>
+    <script>
+            
+          function multiply(x){
+            return  function xyz(y){
+                  return  function pqr(z){
+                       return x*y*z;
+                   }
+               }
+           }
+
+         document.querySelector('button').addEventListener('click',()=>{
+            let x = document.getElementById('x').value;
+            let y = document.getElementById('y').value;
+            let z = document.getElementById('z').value;
+             
+            let result= multiply(x)(y)(z);
+            console.log(result);
+             
+            let h1 = document.createElement('h1');
+            h1.innerText=result;
+            document.getElementById('output').appendChild(h1);
+            document.getElementById('output').style.display="flex";
+
+         })
+    </script>
+</body>
+</html>
